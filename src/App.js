@@ -24,7 +24,7 @@ function App() {
               element={<MovieDetailsPage></MovieDetailsPage>}
             ></Route>
           </Route>
-          {/* <Route path="*" element={<>Not Found</>}></Route> */}
+          <Route path="*" element={<>Not Found</>}></Route>
         </Routes>
       </Suspense>
     </Fragment>
