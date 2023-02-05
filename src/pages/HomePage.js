@@ -6,20 +6,20 @@ const HomePage = () => {
   return (
     <Fragment>
       <Banner></Banner>
-      <section className="movies-layout pb-14 page-container">
-        <h2 className="mb-10 text-3xl font-bold text-white capitalize">
+      <section className="pb-10 movies-layout lg:pb-14 page-container">
+        <h2 className="mb-6 text-[22px] font-bold text-white capitalize lg:mb-10 lg:text-3xl">
           Now playing
         </h2>
         <MovieList type="now_playing"></MovieList>
       </section>
-      <section className="movies-layout pb-14 page-container">
-        <h2 className="mb-10 text-3xl font-bold text-white capitalize">
+      <section className="pb-10 movies-layout lg:pb-14 page-container">
+        <h2 className="mb-6 text-[22px] font-bold text-white capitalize lg:mb-10">
           Top rated movies
         </h2>
         <MovieList type="top_rated"></MovieList>
       </section>
-      <section className="movies-layout pb-14 page-container">
-        <h2 className="mb-10 text-3xl font-bold text-white capitalize">
+      <section className="pb-10 movies-layout lg:pb-14 page-container">
+        <h2 className="mb-6 text-[22px] font-bold text-white capitalize lg:mb-10">
           Trending
         </h2>
         <MovieList type="popular"></MovieList>

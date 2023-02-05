@@ -18,14 +18,18 @@ const Pagination = ({ data, setMoviePage }) => {
     setMoviePage(event.selected + 1);
   };
 
+  useEffect(() => {
+    document.body.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [itemOffset]);
+
   return (
     <ReactPaginate
       breakLabel="..."
-      nextLabel="next >"
+      nextLabel=">"
       onPageChange={handlePageClick}
-      pageRangeDisplayed={5}
+      pageRangeDisplayed={3}
       pageCount={pageCount}
-      previousLabel="< previous"
+      previousLabel="<"
       renderOnZeroPageCount={null}
       className="pagination"
     />

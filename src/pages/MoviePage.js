@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import useSWR from "swr";
+import BackToTopButton from "../components/BackToTopButton";
 import MovieCardSkeleton from "../components/loading/MovieCardSkeleton";
 import MovieCard from "../components/movie/MovieCard";
 import { fetcher, tmdbAPI } from "../config";
@@ -35,12 +36,12 @@ const MoviePage = () => {
 
   return (
     <div className="pb-10 page-container">
-      <div className="flex mb-10">
+      <div className="flex mb-[30px] lg:mb-10">
         <div className="flex-1">
           <input
             ref={inputRef}
             type="text"
-            className="w-full p-4 bg-slate-800 outline-none text-white"
+            className="w-full p-3 text-white outline-none rounded-l-md lg:p-4 bg-slate-800"
             placeholder="Type here to search..."
             onKeyDown={handleEnterSearchMovie}
             defaultValue={filter}
@@ -48,7 +49,7 @@ const MoviePage = () => {
         </div>
         <button
           onClick={handleClickSearchMovie}
-          className="p-4 bg-primary text-white"
+          className="px-3 text-white rounded-r-md lg:px-4 bg-primary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -68,23 +69,25 @@ const MoviePage = () => {
       </div>
 
       {isLoading && (
-        <div className="grid grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 gap-[30px] lg:gap-10 lg:grid-cols-4">
           {new Array(20).fill(0).map((item, index) => (
             <MovieCardSkeleton key={index}></MovieCardSkeleton>
           ))}
         </div>
       )}
 
-      <div className="grid grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 gap-[30px] lg:gap-10 lg:grid-cols-4">
         {!isLoading &&
           movies.length > 0 &&
           movies.map((item) => (
             <MovieCard key={item.id} item={item}></MovieCard>
           ))}
       </div>
-      <div className="mt-10">
+      <div className="mt-6 lg:mt-10">
         <Pagination data={data} setMoviePage={setMoviePage}></Pagination>
       </div>
+
+      <BackToTopButton></BackToTopButton>
     </div>
   );
 };

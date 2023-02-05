@@ -52,7 +52,7 @@ const MoviePageV2 = () => {
           <input
             ref={inputRef}
             type="text"
-            className="w-full p-4 bg-slate-800 outline-none text-white"
+            className="w-full p-4 text-white outline-none bg-slate-800"
             placeholder="Type here to search..."
             onKeyDown={handleEnterSearchMovie}
             defaultValue={filter}
@@ -60,7 +60,7 @@ const MoviePageV2 = () => {
         </div>
         <button
           onClick={handleClickSearchMovie}
-          className="p-4 bg-primary text-white"
+          className="p-4 text-white bg-primary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

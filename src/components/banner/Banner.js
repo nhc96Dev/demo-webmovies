@@ -16,7 +16,7 @@ const Banner = () => {
   const movies = data?.results || {};
 
   return (
-    <section className="banner h-[500px] mb-14 page-container overflow-hidden">
+    <section className="banner h-[400px] lg:h-[500px] mb-10 lg:mb-14 page-container overflow-hidden">
       {isLoading && <BannerSkeleton></BannerSkeleton>}
 
       {!isLoading && (
@@ -40,15 +40,15 @@ const BannerItem = ({ item, genres }) => {
   const { title, backdrop_path, id, genre_ids } = item;
 
   return (
-    <div className="w-full h-full rounded-2xl relative cursor-grab">
+    <div className="relative w-full h-full rounded-2xl cursor-grab">
       <div className="overlay absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-[rgba(0,0,0,0.3)] rounded-2xl"></div>
       <img
         src={`https://image.tmdb.org/t/p/original/${backdrop_path}`}
         alt=""
-        className="w-full h-full object-cover rounded-2xl object-top"
+        className="object-cover object-top w-full h-full rounded-2xl"
       />
-      <div className="absolute left-5 bottom-5 w-full text-white">
-        <h2 className="font-bold text-3xl mb-5">{title}</h2>
+      <div className="absolute w-full text-white left-5 bottom-5">
+        <h2 className="mb-4 text-2xl font-bold lg:mb-5 lg:text-3xl">{title}</h2>
 
         <GenresDetailsMovie
           genre_ids={genre_ids}
@@ -73,9 +73,12 @@ const GenresDetailsMovie = ({ genre_ids, genres }) => {
     }
   }
   return (
-    <div className="flex items-center gap-x-3 mb-8">
+    <div className="flex items-center mb-6 lg:mb-8 gap-x-3">
       {genresArray.map((item, index) => (
-        <span key={index} className="px-4 py-2 border border-white rounded-md">
+        <span
+          key={index}
+          className="px-[14px] py-[6px] lg:px-4 lg:py-2 border border-white rounded-md"
+        >
           {item}
         </span>
       ))}

@@ -23,7 +23,7 @@ const Button = ({
     <button
       type={type}
       onClick={onClick}
-      className={`px-6 py-3 rounded-lg text-white capitalize font-medium mt-auto ${bgClassName} ${className}`}
+      className={`lg:px-6 lg:py-3 px-[20px] py-[10px] rounded-lg text-white capitalize font-medium mt-auto ${bgClassName} ${className}`}
       {...props}
     >
       {children}

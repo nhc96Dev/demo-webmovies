@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-900 font-body px-5 text-white;
+    @apply bg-slate-900 font-body px-5 text-white text-sm lg:text-base;
     // @apply bg-[#181818] font-body px-5;
   }
 }
@@ -15,12 +15,20 @@
     @apply mx-auto
   }
   .movie-list .swiper-slide{
-    width: 300px;
+    max-width: 300px;
     height: auto;
   }
   .banner .swiper {
     height: 100%;
   }
+  @media screen and (max-width: 768px) {
+    .movie-list .swiper-slide{
+      max-width: 250px;
+      margin-right: 25px !important;
+    }
+  }
+    
+  
 }
 // pagination
 .pagination {
@@ -28,8 +36,14 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
+  scroll-behavior: smooth;
   .selected{
     @apply text-primary font-bold
+  }
+}
+@media screen and (max-width: 768px) {
+  .pagination {
+    gap: 12px;
   }
 }
 
