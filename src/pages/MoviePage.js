@@ -8,6 +8,7 @@ import Pagination from "../utils/Pagination";
 
 const MoviePage = () => {
   const [moviePage, setMoviePage] = useState(1);
+
   const [filter, setFilter] = useState("");
   const [url, setUrl] = useState(tmdbAPI.getMovieList("popular", moviePage));
 
@@ -32,6 +33,7 @@ const MoviePage = () => {
       setUrl(tmdbAPI.getMovieList("popular", moviePage));
     }
   }, [filter, moviePage]);
+  // if (!data.results) return null;
   const movies = data?.results || [];
 
   return (

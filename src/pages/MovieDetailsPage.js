@@ -4,7 +4,6 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import useSWR from "swr";
 import MovieCardSkeleton from "../components/loading/MovieCardSkeleton";
 import MovieCard from "../components/movie/MovieCard";
-import MovieList from "../components/movie/MovieList";
 import { fetcher, tmdbAPI } from "../config";
 
 const MovieDetailsPage = () => {
